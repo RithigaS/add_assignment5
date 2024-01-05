@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SRI ESHWAR ANNUAL MEET</title>
+    <style>
+        body {
+            font-family:cascadia code semibold , sans-serif;
+            
+            background-color:cyan;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background:burlywood;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid black;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: palevioletred;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: cyan;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1> SRI ESHWAR ANNUAL MEET PARTICIPATION FORM</h1>
+    <form id="registrationForm" onsubmit="return validateForm()" action="http://127.0.0.1:5500/Results.html" target="_blank">
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="name">Name (Required):</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required="" autofocus="">
+
+            <label for="email">Email (Required):</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required="">
+
+            <label for="Name of the event">Name of the event (Required):</label>
+            <input type="text" id="Name of the event" name="Name of the event"  maxlength="4" required="">
+
+            <label for="phoneNumber">Phone Number (Required):</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required="">
+        </fieldset>
+
+        <fieldset>
+
+            <label for="additional talents">additional talents:</label>
+            <input type="text" id="additional talents" name="additional talents" placeholder="Enter your additional talents" required="">
+
+            <fieldset><legend>Gender:</legend>
+            <label><input type="radio" id="male" name="gender" value="male" required="">Male</label>
+            <label><input type="radio" id="female" name="gender" value="female" required="">Female</label>
+            <label><input type="radio" id="other" name="gender" value="other" required="">Other</label></fieldset>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" required="" min="15" max="70">
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" placeholder="Enter your country" required="">
+
+            <label for="city">City (Required):</label>
+            <input type="text" id="city" name="city" placeholder="Enter your city" required="">
+
+            <label for="dietaryPreferences">Dietary Preferences (Optional):</label>
+            <select id="dietaryPreferences" name="dietaryPreferences" multiple="">
+             <option value="veg">Vegetarian</option>
+             <option value="nonVeg">Non-Vegetarian</option>
+            </select>
+
+            <label for="tshirtSize">T-Shirt Size:</label>
+            <select id="tshirtSize" name="tshirtSize">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            </select>
+
+            <label for="tshirtColor">Preferred T-shirt Color:</label>
+            <input type="color" id="tshirtColor" name="tshirtColor">
+
+            <fieldset>
+                <legend>Session Preferences:</legend>
+                <label><input type="checkbox" name="sessionPreferences" value="session1">Session 1</label>
+                <label><input type="checkbox" name="sessionPreferences" value="session2">Session 2</label>
+                <label><input type="checkbox" name="sessionPreferences" value="session3">Session 3</label>
+            </fieldset>
+
+
+
+            
+            <fieldset>
+                <legend>Will you bring a guest?:</legend>
+                <label><input type="radio" name="bringGuest" value="yes" required="">Yes</label>
+                <label><input type="radio" name="bringGuest" value="no" required="">No</label>
+            </fieldset>
+            
+            <label for="guestName">Guest Name:</label>
+            <input type="text" id="guestName" name="guestName" placeholder="Enter guest&#39;s name">
+             
+            <label for="guestDietaryPreferences">Guest Dietary Preferences:</label>
+            <select id="guestDietaryPreferences" name="guestDietaryPreferences" multiple="" required="">
+            <option value="veg">Vegetarian</option>
+            <option value="nonVeg">Non-Vegetarian</option>
+            </select>
+
+
+
+            <label for="photoID">Upload Photo for ID Card:</label>
+            <input type="file" id="photoID" name="photoID" accept=".jpg" required="">
+
+            <label for="profilePDF">Collect Profile:</label>
+            <input type="file" id="profilePDF" name="profilePDF" accept=".pdf" required="" multiple="">
+
+            <label for="additionalComments">Additional Comments:</label>
+            <textarea id="additionalComments" name="additionalComments" placeholder="Enter any additional comments" required=""></textarea>
+
+
+
+            </fieldset>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <script>
+        function validateForm() {
+        
+            return false;
+        }
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+</body></html>
